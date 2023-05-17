@@ -13,7 +13,7 @@ export default function movingHandler(positions, img) {
 
   // console.log(this._interval);
 
-  this._timeout = setTimeout(() => {
+  this.timeout = setTimeout(() => {
     this.missesCounter = document.querySelector('.misses-counter');
     let missesCounterText = Number(this.missesCounter.textContent);
     missesCounterText += 1;
@@ -24,11 +24,12 @@ export default function movingHandler(positions, img) {
 }
 
 /* ??? В лекциях лектор создаёт свойства в классах вида this._interval, this._element.
-Почему? Ведь на них сразу ругается линтер (Unexpected dangling '_'), зачем так учить?
+Почему? Ведь на них сразу ругается линтер (Unexpected dangling '_'), зачем так делается?
 Как студент должен выкручиваться из этого?
-У меня сразу идёт недоверие к материалу или себе, что я что-то не так делаю */
+У меня сразу идёт недоверие к материалу или себе, что я что-то не так делаю.
+Стандартные настройки линтера не менял */
 
-/* ??? Не могу настроить кастомный курсор. Видимо не полностью настроил вебпак.
+/* ??? Не могу настроить кастомный курсор. Видимо, не полностью настроил вебпак.
 Помогите, пжлст, с настройкой. Что нужно сделать, чтобы заработала команда в css
   cursor: url(/src/img/hammer.png), pointer;
 И всё не развалилось. Я отчаиваюсь и начинаю сердиться, что не выходит...

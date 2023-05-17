@@ -3,7 +3,7 @@ export default class GameField {
     if (typeof element === 'string') {
       const containerElement = document.createElement('ul');
       containerElement.classList = element;
-      this._element = containerElement;
+      this.element = containerElement;
     }
 
     this.fieldHolesNumber = fieldHolesNumber;
@@ -21,14 +21,14 @@ export default class GameField {
       hole.classList = 'hole';
       hole.dataset.position = i;
 
-      this._element.appendChild(hole);
+      this.element.appendChild(hole);
     }
-    document.body.insertBefore(this._element, document.querySelector('h1').nextElementSibling);
+    document.body.insertBefore(this.element, document.querySelector('h1').nextElementSibling);
   }
 
   renderImg() {
-    this._interval = setInterval(
-      () => this.movingHandler(this._element.children, this.imgElement),
+    this.interval = setInterval(
+      () => this.movingHandler(this.element.children, this.imgElement),
       2000,
     );
   }
@@ -57,8 +57,8 @@ export default class GameField {
     if (miss === maxMisses) {
       this.missesCounter.textContent = 0;
       this.scoresCounter.textContent = 0;
-      clearInterval(this._interval);
-      clearTimeout(this._timeout);
+      clearInterval(this.interval);
+      clearTimeout(this.timeout);
       this.renderImg();
       alert(`Вы проиграли (не попали по цели ${maxMisses} раз). 
       Начните сначала, может, у вас будут шансы остановить эту шайтан-машину в следующий раз :)`);

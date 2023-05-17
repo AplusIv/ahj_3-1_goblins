@@ -1,7 +1,7 @@
 export default class Clicker {
   constructor(gamefield) {
     this.gamefield = gamefield;
-    this.element = this.gamefield._element;
+    this.element = this.gamefield.element;
 
     this.onBoardClick = this.onBoardClick.bind(this);
     this.element.addEventListener('click', this.onBoardClick);
@@ -16,8 +16,8 @@ export default class Clicker {
       currentScores += 1;
       this.gamefield.scoresCounter.textContent = currentScores;
 
-      clearInterval(this.gamefield._interval);
-      clearTimeout(this.gamefield._timeout);
+      clearInterval(this.gamefield.interval);
+      clearTimeout(this.gamefield.timeout);
       this.gamefield.removeImg(hole);
 
       this.gamefield.renderImg();
