@@ -29,6 +29,27 @@ export default function movingHandler(positions, img) {
 У меня сразу идёт недоверие к материалу или себе, что я что-то не так делаю.
 Стандартные настройки линтера не менял */
 
+/* ??? Или также в лекции идёт перезаписывание входящих параметров,
+как тут (element = document.querySelector(element)
+Линтер ругается (Assignment to function parameter 'element'.eslintno-param-reassign))
+И это я не придумываю ничего с настройкой. Что с этим делать, может, я что-то не понимаю.
+Почему нас так учат, если на это сразу ругается линтер?
+
+class FilterWidget {
+  constructor(element, filterHandler) {
+      if(typeof element === 'string') {
+          element = document.querySelector(element);
+      }
+
+      this._filterText = document.querySelector('.filter-text')
+
+      this._filterHandler = filterHandler;
+      this.onFilter = this.onFilter.bind(this);
+      this._element = element;
+
+      this._filterText.addEventListener('input', this.onFilter);
+  } */
+
 /* ??? Не могу настроить кастомный курсор. Видимо, не полностью настроил вебпак.
 Помогите, пжлст, с настройкой. Что нужно сделать, чтобы заработала команда в css
   cursor: url(/src/img/hammer.png), pointer;
